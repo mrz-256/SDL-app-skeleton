@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../logic/Game.h"
+#include "../resources/global_resources.h"
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
@@ -9,12 +10,18 @@ class UI {
 private:
     SDL_Window *window;
     SDL_Renderer *renderer;
-    Game *game;
     bool running;
+
+    string title;
+    int screen_size;
 
 public:
     UI();
 
+    /**
+     * Initializes used libraries (SDL)
+     * @return true on success
+     */
     bool onInit();
 
     bool onLoadMedia();

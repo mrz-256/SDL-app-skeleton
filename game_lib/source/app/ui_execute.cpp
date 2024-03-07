@@ -9,7 +9,7 @@ UI::UI() : window(nullptr), renderer(nullptr), running(true)
 int UI::onExecute()
 {
     if (not onInit()) return -1;
-
+    if (not onLoadMedia()) return -2;
 
 }
 

@@ -5,6 +5,7 @@ set(HEADER_FILES
         headers/logic/MoveDirection.h
         headers/logic/Game.h
         headers/app/UI.h
+        headers/resources/global_resources.h
 )
 
 set(SOURCE_FILES
@@ -16,6 +17,7 @@ set(SOURCE_FILES
         source/app/ui_input.cpp
         source/app/ui_cleanup.cpp
         source/app/ui_loadmedia.cpp
+        source/resources/global_resources.cpp
 )
 
 add_library(game_lib STATIC ${SOURCE_FILES} ${HEADER_FILES})
