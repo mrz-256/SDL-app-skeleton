@@ -30,6 +30,7 @@ public:
      */
     static bool onLoadMedia();
 
+
     int onExecute();
 
     void onLoop();
@@ -38,6 +39,9 @@ public:
 
     void onRender();
 
+    /**
+     * Cleans all loaded resources
+     */
     void onCleanup();
 
 };
