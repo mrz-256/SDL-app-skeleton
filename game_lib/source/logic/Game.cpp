@@ -134,7 +134,7 @@ PieceType Game::getWinner()
     {
         for (int c = 0; c < board_size; ++c)
         {
-            if (board[r][c].type == PieceType::LIGHT and possibleMovesForPiece(r, c).size() != 0)
+            if (board[r][c].type == PieceType::LIGHT and !possibleMovesForPiece(r, c).empty())
             {
                 // there are still LIGHT pieces with possible moves
                 goto continue_with_dark;
@@ -149,7 +149,7 @@ PieceType Game::getWinner()
     {
         for (int c = 0; c < board_size; ++c)
         {
-            if (board[r][c].type == PieceType::DARK and possibleMovesForPiece(r, c).size() != 0)
+            if (board[r][c].type == PieceType::DARK and !possibleMovesForPiece(r, c).empty())
             {
                 // there are still DARK pieces with possible moves, so no one won
                 return PieceType::NONE;
