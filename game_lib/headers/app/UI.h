@@ -24,7 +24,11 @@ public:
      */
     bool onInit();
 
-    bool onLoadMedia();
+    /**
+     * Loads all media used in UI.
+     * @return true on success
+     */
+    static bool onLoadMedia();
 
     int onExecute();
 
