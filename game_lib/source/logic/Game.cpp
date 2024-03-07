@@ -1,8 +1,10 @@
 #include "../../headers/logic/Game.h"
 
+
 Game::Game(int board_size) : board_size(board_size)
 {
-    light_playing = true;
+    playingType = PieceType::DARK;
+
     board.resize(board_size, vector<Piece>(board_size, Piece(PieceType::NONE)));
 
     // fill first 3 rows with LIGHT PIECES
@@ -23,6 +25,18 @@ Game::Game(int board_size) : board_size(board_size)
         }
     }
 }
+
+
+int Game::getBoardSize() const
+{
+    return board_size;
+}
+
+PieceType Game::getPlayingType() const
+{
+    return playingType;
+}
+
 
 vector<MoveDirection> Game::possibleMovesForPiece(int x, int y)
 {
@@ -113,6 +127,40 @@ void Game::doMove(int x, int y, MoveDirection direction)
 
 }
 
+PieceType Game::getWinner()
+{
+    // check for LIGHT
+    for (int r = 0; r < board_size; ++r)
+    {
+        for (int c = 0; c < board_size; ++c)
+        {
+            if (board[r][c].type == PieceType::LIGHT and possibleMovesForPiece(r, c).size() != 0)
+            {
+                // there are still LIGHT pieces with possible moves
+                goto continue_with_dark;
+            }
+        }
+    }
+    // if there are no LIGHT pieces, or they have no possible moves, DARK won
+    return PieceType::DARK;
+
+    continue_with_dark:
+    for (int r = 0; r < board_size; ++r)
+    {
+        for (int c = 0; c < board_size; ++c)
+        {
+            if (board[r][c].type == PieceType::DARK and possibleMovesForPiece(r, c).size() != 0)
+            {
+                // there are still DARK pieces with possible moves, so no one won
+                return PieceType::NONE;
+            }
+        }
+    }
+    // if there are no DARK pieces with moves, LIGHT won
+    return PieceType::LIGHT;
+}
+
+
 string Game::toString()
 {
     stringstream ss;
@@ -134,3 +182,4 @@ string Game::toString()
     }
     return ss.str();
 }
+

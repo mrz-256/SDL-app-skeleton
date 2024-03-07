@@ -10,6 +10,10 @@ int main()
     {
         std::cout << "[" << d.horizontal << ";" << d.vertical << "]";
     }
+    std::cout << "\n";
+
+    game.doMove(1,5, {-1,-1});
+    std::cout << game.toString() << "\n";
 
     return 0;
 }

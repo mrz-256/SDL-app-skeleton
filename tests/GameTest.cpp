@@ -21,6 +21,12 @@ TEST_F(GameFixture, PossibleMovesForPiece_Test){
 
     EXPECT_EQ(game->possibleMovesForPiece(0,0).size(), 0);
 
-    EXPECT_EQ(game->possibleMovesForPiece(0,0).size(), 0);
+    EXPECT_EQ(game->possibleMovesForPiece(0,2).size(), 1);
 
+    EXPECT_EQ(game->possibleMovesForPiece(2,2).size(), 2);
+}
+
+TEST_F(GameFixture, ToString_Test){
+    std::cout << game->toString();
+    // must be checked by eye
 }

@@ -18,7 +18,7 @@ class Game {
 private:
     vector<vector<Piece>> board;
     int board_size;
-    bool light_playing;
+    PieceType playingType;
 
 public:
 
@@ -28,6 +28,17 @@ public:
      */
     explicit Game(int board_size);
 
+    /**
+     * Returns board size
+     * @return the size
+     */
+    int getBoardSize() const;
+
+    /**
+     * Gives a piecetype representing the type of the current player
+     * @return the type
+     */
+    PieceType getPlayingType() const;
 
     /**
      * Returns all directions  to which player can go from piece at [x,y] in `board`
@@ -36,6 +47,14 @@ public:
      * @return the vector of possible directions
      */
     vector<MoveDirection> possibleMovesForPiece(int x, int y);
+
+    /**
+     * Returns a piecetype representing the type of the winner. Will be PieceType::NONE
+     * when there is no winner yet.
+     * @return the type
+     */
+    PieceType getWinner();
+
 
     /**
      * Moves piece at [x,y] in given direction
@@ -47,9 +66,9 @@ public:
 
 
 
-public:
+
     /**
-     * toString method for the `board`
+     * toString method for the `board` vector
      */
     string toString();
 };
