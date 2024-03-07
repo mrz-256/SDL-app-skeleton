@@ -15,7 +15,7 @@ Game::Game(int board_size) : board_size(board_size)
     }
 
     // fill last 3 rows with DARK PIECES
-    for (int y = board_size-3; y < board_size; ++y)
+    for (int y = board_size - 3; y < board_size; ++y)
     {
         for (int x = 0; x < board_size; ++x)
         {
@@ -90,6 +90,26 @@ vector<MoveDirection> Game::possibleMovesForPiece(int x, int y)
 
 void Game::doMove(int x, int y, MoveDirection direction)
 {
+    // direction should already be safe so there is no need for boundary checking
+
+    int next_x = x + direction.horizontal;
+    int next_y = y + direction.vertical;
+
+    // if its simple move
+    if (board[next_y][next_x].type == PieceType::NONE)
+    {
+        board[next_y][next_x] = board[y][x];
+        board[y][x] = Piece(PieceType::NONE);
+    }
+    // if it's a jump
+    else
+    {
+        // erase jumped-over piece
+        board[next_y][next_x] = Piece(PieceType::NONE);
+
+        board[next_y + direction.vertical][next_x + direction.horizontal] = board[y][x];
+        board[y][x] = Piece(PieceType::NONE);
+    }
 
 }
 
