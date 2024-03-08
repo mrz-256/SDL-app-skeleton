@@ -82,6 +82,7 @@ bool SceneManager::renderCurrent(SDL_Window *window, SDL_Renderer *renderer)
 }
 
 // define instance of singleton
+
 SceneManager* SceneManager::instance = nullptr;
 
 SceneManager *SceneManager::get()

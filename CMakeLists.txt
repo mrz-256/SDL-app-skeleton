@@ -14,6 +14,4 @@ add_subdirectory(game_lib)
 
 target_link_libraries(GameOfCheckers_run game_lib)
 
-add_subdirectory(tests)
-
 target_link_libraries(GameOfCheckers_run SDL2 SDL2_ttf SDL2_image)

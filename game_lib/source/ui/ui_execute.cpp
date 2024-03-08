@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../../headers/ui/UI.h"
 
 UI::UI() : window(nullptr), renderer(nullptr), running(true)
