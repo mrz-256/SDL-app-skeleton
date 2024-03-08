@@ -22,12 +22,15 @@ private:
     /// id of a scene to close in the next update, most of time is null
     string scene_to_close_id;
 
-
-public:
+    static SceneManager* instance;
 
     SceneManager();
 
     virtual ~SceneManager();
+
+public:
+
+    static SceneManager* get();
 
     /**
      * Adds a factory for creating an instance of a scene class into inner `scene_factories`

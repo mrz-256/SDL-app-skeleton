@@ -80,3 +80,12 @@ bool SceneManager::renderCurrent(SDL_Window *window, SDL_Renderer *renderer)
     scenes[current_id]->render(window, renderer);
     return true;
 }
+
+SceneManager *SceneManager::get()
+{
+    if (instance == nullptr)
+    {
+        instance = new SceneManager();
+    }
+    return instance;
+}
