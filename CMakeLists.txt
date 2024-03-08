@@ -7,7 +7,7 @@ link_directories(/usr/lib/x86_64-linux-gnu/)
 
 include_directories(/usr/include/SDL2)
 
-add_executable(GameOfCheckers_run game_lib/source/app/ui_execute.cpp)
+add_executable(GameOfCheckers_run game_lib/source/ui/ui_execute.cpp)
 
 include_directories(game_lib)
 add_subdirectory(game_lib)

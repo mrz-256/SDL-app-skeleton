@@ -4,19 +4,19 @@ set(HEADER_FILES
         headers/logic/Piece.h
         headers/logic/MoveDirection.h
         headers/logic/Game.h
-        headers/app/UI.h
+        headers/ui/UI.h
         headers/resources/global_resources.h
 )
 
 set(SOURCE_FILES
         source/logic/Game.cpp
-        source/app/ui_execute.cpp
-        source/app/ui_init.cpp
-        source/app/ui_loop.cpp
-        source/app/ui_render.cpp
-        source/app/ui_input.cpp
-        source/app/ui_cleanup.cpp
-        source/app/ui_loadmedia.cpp
+        source/ui/ui_execute.cpp
+        source/ui/ui_init.cpp
+        source/ui/ui_loop.cpp
+        source/ui/ui_render.cpp
+        source/ui/ui_input.cpp
+        source/ui/ui_cleanup.cpp
+        source/ui/ui_loadmedia.cpp
         source/resources/global_resources.cpp
 )
 
