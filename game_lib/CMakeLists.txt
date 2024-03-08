@@ -8,6 +8,7 @@ set(HEADER_FILES
         headers/resources/global_resources.h
         headers/scene_logic/SceneManager.h
         headers/scene_logic/Scene.h
+        headers/ui/InputData.h
 )
 
 set(SOURCE_FILES

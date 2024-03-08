@@ -1,6 +1,6 @@
 #include "headers/ui/UI.h"
 
-void UI::onLoop()
+void UI::onLoop(InputData* input_data)
 {
 
 }

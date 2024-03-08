@@ -12,6 +12,7 @@ int UI::onExecute()
     if (not onLoadMedia()) return -2;
 
     Uint64 last = SDL_GetTicks64();
+    auto* input_data = new InputData();
 
     SDL_ShowWindow(window);
     while (running)
@@ -20,8 +21,8 @@ int UI::onExecute()
         if (elapsed_time < 1000/60) continue;
         last += elapsed_time;
 
-        onInput();
-        onLoop();
+        onInput(input_data);
+        onLoop(input_data);
         onRender();
     }
 

@@ -1,10 +1,12 @@
 #pragma once
 
-#include "../logic/Game.h"
+#include "InputData.h"
 #include "../resources/global_resources.h"
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
+#include <string>
+using std::string;
 
 class UI {
 private:
@@ -30,12 +32,15 @@ public:
      */
     static bool onLoadMedia();
 
-
     int onExecute();
 
-    void onLoop();
+    /**
+     * Updates the instance of InputData with current events and input
+     * @param input_data  pointer to the data struct
+     */
+    void onInput(InputData* input_data);
 
-    void onInput();
+    void onLoop(InputData* input_data);
 
     void onRender();
 

@@ -18,7 +18,7 @@ public:
     virtual ~Scene();
 
     /**
-     * Updates data in this scene. TODO: PASS IN THE INPUT DATA
+     * Updates data in this scene.
      */
     virtual void update() = 0;
 
