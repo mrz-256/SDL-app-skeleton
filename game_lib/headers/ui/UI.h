@@ -13,7 +13,6 @@ class UI {
 private:
     SDL_Window *window;
     SDL_Renderer *renderer;
-    SceneManager* scene_manager;
 
     bool running;
 

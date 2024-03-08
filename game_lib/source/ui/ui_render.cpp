@@ -2,7 +2,7 @@
 
 void UI::onRender()
 {
-    scene_manager->renderCurrent(window, renderer);
+    SceneManager::get()->renderCurrent(window, renderer);
 
     SDL_RenderPresent(renderer);
 }

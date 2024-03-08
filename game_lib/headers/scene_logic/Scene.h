@@ -9,12 +9,9 @@ class SceneManager;
  * A virtual class used for each scene in ui.
  */
 class Scene {
-protected:
-    SceneManager* manager;
-
 public:
 
-    explicit Scene(SceneManager *manager);
+    explicit Scene();
 
     virtual ~Scene();
 

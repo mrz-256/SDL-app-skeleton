@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../../headers/ui/UI.h"
 
 UI::UI() : window(nullptr), renderer(nullptr), running(true)
@@ -12,14 +13,14 @@ int UI::onExecute()
     if (not onLoadMedia()) return -2;
 
     Uint64 last = SDL_GetTicks64();
-    auto* input_data = new InputData();
+    auto* input_data = new InputData{SDL_GetKeyboardState(nullptr)};
 
     SDL_ShowWindow(window);
     while (running)
     {
         Uint64 elapsed_time = SDL_GetTicks64() - last;
         if (elapsed_time < 1000/60) continue;
-        last += elapsed_time;
+        last = SDL_GetTicks64();
 
         onInput(input_data);
         onLoop(input_data, elapsed_time);
