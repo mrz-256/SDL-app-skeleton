@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../resources/global_resources.h"
+#include "../ui/InputData.h"
 
 class SceneManager;
 
@@ -20,7 +21,7 @@ public:
     /**
      * Updates data in this scene.
      */
-    virtual void update() = 0;
+    virtual void update(InputData* input_data, Uint64 elapsed_time) = 0;
 
     /**
      * Renders everything necessary in this scene onto provided renderer

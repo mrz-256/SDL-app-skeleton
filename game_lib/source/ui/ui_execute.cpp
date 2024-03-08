@@ -22,7 +22,7 @@ int UI::onExecute()
         last += elapsed_time;
 
         onInput(input_data);
-        onLoop(input_data);
+        onLoop(input_data, elapsed_time);
         onRender();
     }
 

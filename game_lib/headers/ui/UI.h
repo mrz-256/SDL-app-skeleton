@@ -35,12 +35,17 @@ public:
     int onExecute();
 
     /**
-     * Updates the instance of InputData with current events and input
+     * Updates the instance of InputData with current events and input.
+     * Executed on every iteration of main loop.
      * @param input_data  pointer to the data struct
      */
     void onInput(InputData* input_data);
 
-    void onLoop(InputData* input_data);
+    /**
+     * Updates game process on every iteration of main loop.
+     * @param input_data current input and events
+     */
+    void onLoop(InputData* input_data, Uint64 elapsed_time);
 
     void onRender();
 
