@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <string>
 #include <functional>
+
 using std::unordered_map;
 using std::string;
 using std::function;
@@ -13,9 +14,9 @@ using std::function;
 class SceneManager {
 private:
     /// Holds initialized instances of scenes
-    unordered_map<string, Scene*> scenes;
+    unordered_map<string, Scene *> scenes;
     /// Holds factories for scenes
-    unordered_map<string, function<Scene*()>> scene_factories;
+    unordered_map<string, function<Scene *()>> scene_factories;
     /// id of the current scene
     string current_id;
     /// id of a scene to close in the next update, most of time is null
@@ -35,21 +36,21 @@ public:
      * @param scene_factory function returning instance of given scene
      * @return true if scene was successfully registered
      */
-    bool registerScene(const string& id, function<Scene*()> scene_factory);
+    bool registerScene(const string &id, function<Scene *()> scene_factory);
 
     /**
      * Switches to another registered scene.
      * @param id identification of the scene to switch to
      * @return true if scene was switches successfully
      */
-    bool switchScene(const string& id);
+    bool switchScene(const string &id);
 
     /**
      * Deletes instance of a scene with given id in the next update cycle.
      * Used to properly closes scenes and not just unactivate them.
      * @param id identification of the scene to delete
      */
-    void closeScene(const string& id);
+    void closeScene(const string &id);
 
     /**
      * Updates the current scene with the current input
@@ -57,6 +58,13 @@ public:
      * @param elapsed_time time elapsed since last main loop iteration in milliseconds
      * @return if current scene was successfully updated
      */
-    bool updateCurrent(InputData* input_data, Uint64 elapsed_time);
+    bool updateCurrent(InputData *input_data, Uint64 elapsed_time);
 
+    /**
+     * Renders the current scene onto the renderer
+     * @param window the window of the app
+     * @param renderer the renderer which is the scene rendered onto
+     * @return true on success
+     */
+    bool renderCurrent(SDL_Window *window, SDL_Renderer *renderer);
 };

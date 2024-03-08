@@ -72,3 +72,11 @@ bool SceneManager::updateCurrent(InputData *input_data, Uint64 elapsed_time)
     scenes[current_id]->update(input_data, elapsed_time);
     return true;
 }
+
+bool SceneManager::renderCurrent(SDL_Window *window, SDL_Renderer *renderer)
+{
+    if (scenes[current_id] == nullptr) return false;
+
+    scenes[current_id]->render(window, renderer);
+    return true;
+}

@@ -13,7 +13,7 @@ class UI {
 private:
     SDL_Window *window;
     SDL_Renderer *renderer;
-    SceneManager* manager;
+    SceneManager* scene_manager;
 
     bool running;
 
@@ -51,6 +51,9 @@ public:
      */
     void onLoop(InputData* input_data, Uint64 elapsed_time);
 
+    /**
+     * Renders everything on every iteration of main loop.
+     */
     void onRender();
 
     /**

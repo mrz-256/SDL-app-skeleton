@@ -27,9 +27,10 @@ public:
 
     /**
      * Renders everything necessary in this scene onto provided renderer
+     * @param window the window of the app
      * @param renderer the renderer which the scene is rendered to
      */
-    virtual void render(SDL_Renderer* renderer) = 0;
+    virtual void render(SDL_Window* window, SDL_Renderer* renderer) = 0;
 
     /**
      * Executed when scene switches from being the current scene.
