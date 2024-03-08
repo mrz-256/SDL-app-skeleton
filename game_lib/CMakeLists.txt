@@ -6,6 +6,8 @@ set(HEADER_FILES
         headers/logic/Game.h
         headers/ui/UI.h
         headers/resources/global_resources.h
+        headers/scene_logic/SceneManager.h
+        headers/scene_logic/Scene.h
 )
 
 set(SOURCE_FILES
@@ -18,6 +20,8 @@ set(SOURCE_FILES
         source/ui/ui_cleanup.cpp
         source/ui/ui_loadmedia.cpp
         source/resources/global_resources.cpp
+        source/scene_logic/SceneManager.cpp
+        source/scene_logic/Scene.cpp
 )
 
 add_library(game_lib STATIC ${SOURCE_FILES} ${HEADER_FILES})
