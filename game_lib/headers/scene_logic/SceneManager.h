@@ -2,6 +2,52 @@
 
 #include "Scene.h"
 
-class SceneManager {
+#include <unordered_map>
+#include <string>
+#include <functional>
+using std::unordered_map;
+using std::string;
+using std::function;
 
+
+class SceneManager {
+private:
+    /// Holds initialized instances of scenes
+    unordered_map<string, Scene*> scenes;
+    /// Holds factories for scenes
+    unordered_map<string, function<Scene*()>> scene_factories;
+    /// id of the current scene
+    string current_id;
+    /// id of a scene to close in the next update, most of time is null
+    string scene_to_close_id;
+
+
+public:
+
+    SceneManager();
+
+    virtual ~SceneManager();
+
+    /**
+     * Adds a factory for creating an instance of a scene class into inner `scene_factories`
+     * map. Does not create instance nor set this as a current scene.
+     * @param id identification of the newly added scene
+     * @param scene_factory function returning instance of given scene
+     * @return true if scene was successfully registered
+     */
+    bool registerScene(const string& id, function<Scene*()> scene_factory);
+
+    /**
+     * Switches to another registered scene.
+     * @param id identification of the scene to switch to
+     * @return true if scene was switches successfully
+     */
+    bool switchScene(const string& id);
+
+    /**
+     * Deletes instance of a scene with given id in the next update cycle.
+     * Used to properly closes scenes and not just unactivate them.
+     * @param id identification of the scene to delete
+     */
+    void closeScene(const string& id);
 };
