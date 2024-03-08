@@ -9,7 +9,16 @@ SceneManager::SceneManager() : scenes(), scene_factories()
 }
 
 SceneManager::~SceneManager()
-{}
+{
+    for(auto& [id, scene] : scenes)
+    {
+        if (scene != nullptr)
+        {
+            scene->close();
+            delete scene;
+        }
+    }
+}
 
 bool SceneManager::registerScene(const string &id, function<Scene *()> scene_factory)
 {
@@ -47,4 +56,19 @@ bool SceneManager::switchScene(const string &id)
 void SceneManager::closeScene(const string &id)
 {
     scene_to_close_id = id;
+}
+
+bool SceneManager::updateCurrent(InputData *input_data, Uint64 elapsed_time)
+{
+    // close the to_close scene
+    if (!scene_to_close_id.empty() and scenes[scene_to_close_id] != nullptr)
+    {
+        scenes[scene_to_close_id]->close();
+        delete scenes[scene_to_close_id];
+    }
+
+    if (scenes[current_id] == nullptr) return false;
+
+    scenes[current_id]->update(input_data, elapsed_time);
+    return true;
 }

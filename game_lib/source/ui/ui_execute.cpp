@@ -26,7 +26,6 @@ int UI::onExecute()
         onRender();
     }
 
-
     onCleanup();
     return 0;
 }

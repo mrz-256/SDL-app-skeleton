@@ -2,6 +2,7 @@
 
 #include "InputData.h"
 #include "../resources/global_resources.h"
+#include "../scene_logic/SceneManager.h"
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
@@ -12,6 +13,8 @@ class UI {
 private:
     SDL_Window *window;
     SDL_Renderer *renderer;
+    SceneManager* manager;
+
     bool running;
 
     string title;
@@ -44,6 +47,7 @@ public:
     /**
      * Updates game process on every iteration of main loop.
      * @param input_data current input and events
+     * @param elapsed_time elapsed time since last iteration in milliseconds
      */
     void onLoop(InputData* input_data, Uint64 elapsed_time);
 

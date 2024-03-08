@@ -50,4 +50,13 @@ public:
      * @param id identification of the scene to delete
      */
     void closeScene(const string& id);
+
+    /**
+     * Updates the current scene with the current input
+     * @param input_data the current input data and events
+     * @param elapsed_time time elapsed since last main loop iteration in milliseconds
+     * @return if current scene was successfully updated
+     */
+    bool updateCurrent(InputData* input_data, Uint64 elapsed_time);
+
 };

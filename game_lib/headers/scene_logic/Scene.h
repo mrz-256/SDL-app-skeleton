@@ -19,7 +19,9 @@ public:
     virtual ~Scene();
 
     /**
-     * Updates data in this scene.
+     * Updates the scene with input data
+     * @param input_data inputted data and events
+     * @param elapsed_time elapsed time since last update in milliseconds
      */
     virtual void update(InputData* input_data, Uint64 elapsed_time) = 0;
 
