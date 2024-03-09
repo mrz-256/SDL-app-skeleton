@@ -2,4 +2,6 @@
 
 namespace gui
 {
+    void Node::close()
+    {}
 } // gui
