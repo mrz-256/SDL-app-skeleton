@@ -3,6 +3,10 @@
 
 ExampleScene::~ExampleScene() = default;
 
+ExampleScene::ExampleScene(SDL_Window *window, SDL_Renderer *renderer)
+        : Scene(window, renderer)
+{}
+
 void ExampleScene::update(InputData *input_data, Uint64 elapsed_time)
 {
     if (input_data->keyboard[SDL_SCANCODE_RIGHT])

@@ -1,10 +1,11 @@
 #include "headers/scenes/ExampleSceneTwo.h"
 #include "../../headers/scene_logic/SceneManager.h"
 
-ExampleSceneTwo::~ExampleSceneTwo()
-{
+ExampleSceneTwo::~ExampleSceneTwo() = default;
 
-}
+ExampleSceneTwo::ExampleSceneTwo(SDL_Window *window, SDL_Renderer *renderer)
+: Scene(window, renderer)
+{}
 
 void ExampleSceneTwo::update(InputData *input_data, Uint64 elapsed_time)
 {

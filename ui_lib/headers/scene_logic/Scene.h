@@ -12,7 +12,12 @@ class SceneManager;
 class Scene {
 public:
 
-    explicit Scene();
+    /**
+     * Creates the scene.
+     * @param window may be necessary to initialize some scene fields
+     * @param renderer may be necessary to initialize some scene fields
+     */
+    Scene(SDL_Window* window, SDL_Renderer* renderer);
 
     virtual ~Scene();
 
@@ -44,7 +49,7 @@ public:
 
     /**
      * Executed when scene is to be closed before calling destructor. Used to store
-     * data and such.
+     * loaded data and such.
      */
     virtual void close();
 

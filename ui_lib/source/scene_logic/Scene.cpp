@@ -2,7 +2,8 @@
 #include "headers/scene_logic/SceneManager.h"
 
 
-Scene::Scene() = default;
+
+Scene::Scene(SDL_Window *window, SDL_Renderer *renderer){}
 
 Scene::~Scene() = default;
 

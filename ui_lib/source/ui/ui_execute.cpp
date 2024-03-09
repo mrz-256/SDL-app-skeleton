@@ -13,11 +13,15 @@ int UI::onExecute()
 
     // input data
     Uint64 last = SDL_GetTicks64();
-    auto* input_data = new InputData{SDL_GetKeyboardState(nullptr)};
+    auto *input_data = new InputData{SDL_GetKeyboardState(nullptr)};
 
     // register scenes
-    SceneManager::get()->registerScene("scene_one", [](){return new ExampleScene();});
-    SceneManager::get()->registerScene("scene_two", [](){return new ExampleSceneTwo();});
+    SceneManager::get()->registerScene("scene_one", [this]() {
+        return new ExampleScene(window, renderer);
+    });
+    SceneManager::get()->registerScene("scene_two", [this]() {
+        return new ExampleSceneTwo(window, renderer);
+    });
     SceneManager::get()->switchScene("scene_one");
 
 
@@ -26,7 +30,7 @@ int UI::onExecute()
     while (running)
     {
         Uint64 elapsed_time = SDL_GetTicks64() - last;
-        if (elapsed_time < 1000/60) continue;
+        if (elapsed_time < 1000 / 60) continue;
         last = SDL_GetTicks64();
 
         onInput(input_data);
@@ -37,7 +41,6 @@ int UI::onExecute()
     onCleanup();
     return 0;
 }
-
 
 
 int main()
