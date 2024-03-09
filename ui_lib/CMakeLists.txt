@@ -6,6 +6,8 @@ set(HEADER_FILES
         headers/scene_logic/SceneManager.h
         headers/scene_logic/Scene.h
         headers/ui/InputData.h
+        headers/gui/Node.h
+        headers/gui/Rectangle.h
         headers/scenes/ExampleScene.h
         headers/scenes/ExampleSceneTwo.h
 )
@@ -21,6 +23,8 @@ set(SOURCE_FILES
         source/resources/global_resources.cpp
         source/scene_logic/SceneManager.cpp
         source/scene_logic/Scene.cpp
+        source/gui/Node.cpp
+        source/gui/Rectangle.cpp
         source/scenes/ExampleScene.cpp
         source/scenes/ExampleSceneTwo.cpp
 )
