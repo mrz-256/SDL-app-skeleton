@@ -1,9 +1,6 @@
 project(ui)
 
 set(HEADER_FILES
-        headers/logic/Piece.h
-        headers/logic/MoveDirection.h
-        headers/logic/Game.h
         headers/ui/UI.h
         headers/resources/global_resources.h
         headers/scene_logic/SceneManager.h
@@ -14,7 +11,6 @@ set(HEADER_FILES
 )
 
 set(SOURCE_FILES
-        source/logic/Game.cpp
         source/ui/ui_execute.cpp
         source/ui/ui_init.cpp
         source/ui/ui_loop.cpp
