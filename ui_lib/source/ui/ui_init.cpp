@@ -7,7 +7,7 @@ bool UI::onInit()
 
     // create window
     window = SDL_CreateWindow(
-            title.c_str(),
+            "ui",
             SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
             screen_size,screen_size,
             SDL_WINDOW_HIDDEN

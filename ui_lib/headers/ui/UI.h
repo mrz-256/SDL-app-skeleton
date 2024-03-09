@@ -3,6 +3,8 @@
 #include "InputData.h"
 #include "../resources/global_resources.h"
 #include "../scene_logic/SceneManager.h"
+#include "../scenes/ExampleScene.h"
+#include "../scenes/ExampleSceneTwo.h"
 
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
@@ -16,7 +18,6 @@ private:
 
     bool running;
 
-    string title;
     int screen_size;
 
 public:

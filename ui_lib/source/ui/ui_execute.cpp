@@ -2,18 +2,26 @@
 
 UI::UI() : window(nullptr), renderer(nullptr), running(true)
 {
-    title = "Checkers";
     screen_size = 500;
 }
 
 int UI::onExecute()
 {
+    // initialization part
     if (not onInit()) return -1;
     if (not onLoadMedia()) return -2;
 
+    // input data
     Uint64 last = SDL_GetTicks64();
     auto* input_data = new InputData{SDL_GetKeyboardState(nullptr)};
 
+    // register scenes
+    SceneManager::get()->registerScene("scene_one", [](){return new ExampleScene();});
+    SceneManager::get()->registerScene("scene_two", [](){return new ExampleSceneTwo();});
+    SceneManager::get()->switchScene("scene_one");
+
+
+    // main loop
     SDL_ShowWindow(window);
     while (running)
     {
@@ -34,6 +42,6 @@ int UI::onExecute()
 
 int main()
 {
-    UI app;
-    return app.onExecute();
+    UI ui;
+    return ui.onExecute();
 }

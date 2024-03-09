@@ -1,4 +1,4 @@
-project(checkers)
+project(ui)
 
 set(HEADER_FILES
         headers/logic/Piece.h
@@ -9,6 +9,8 @@ set(HEADER_FILES
         headers/scene_logic/SceneManager.h
         headers/scene_logic/Scene.h
         headers/ui/InputData.h
+        headers/scenes/ExampleScene.h
+        headers/scenes/ExampleSceneTwo.h
 )
 
 set(SOURCE_FILES
@@ -23,6 +25,8 @@ set(SOURCE_FILES
         source/resources/global_resources.cpp
         source/scene_logic/SceneManager.cpp
         source/scene_logic/Scene.cpp
+        source/scenes/ExampleScene.cpp
+        source/scenes/ExampleSceneTwo.cpp
 )
 
-add_library(game_lib STATIC ${SOURCE_FILES} ${HEADER_FILES})
+add_library(ui_lib STATIC ${SOURCE_FILES} ${HEADER_FILES})
