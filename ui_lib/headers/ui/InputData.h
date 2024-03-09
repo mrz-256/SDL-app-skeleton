@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../resources/global_resources.h"
-#include <queue>
-using std::queue;
+#include <vector>
+using std::vector;
 
 /**
  * A struct used to hold new input data
@@ -13,5 +13,5 @@ typedef struct InputData {
     /// mouse position
     Sint32 mouse_x=0, mouse_y=0;
     /// The raw events in a que
-    queue<SDL_Event> events;
+    vector<SDL_Event> events;
 }InputData;

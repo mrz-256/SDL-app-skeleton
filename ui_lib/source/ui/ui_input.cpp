@@ -15,7 +15,7 @@ void UI::onInput(InputData* input_data)
         }
         else
         {
-            input_data->events.push(event);
+            input_data->events.push_back(event);
         }
     }
 }
