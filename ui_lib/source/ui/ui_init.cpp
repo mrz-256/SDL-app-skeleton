@@ -4,6 +4,9 @@ bool UI::onInit()
 {
     // initialize SDL and SDL_ttf
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0 or TTF_Init() < 0) return false;
+    // initialize SDL_image
+    int flags = IMG_INIT_JPG | IMG_INIT_PNG;
+    if (not(IMG_Init(flags) & flags)) return false;
 
     // create window
     window = SDL_CreateWindow(
