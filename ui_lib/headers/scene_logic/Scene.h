@@ -7,6 +7,7 @@ class SceneManager;
 
 /**
  * A virtual class used for each scene in ui.
+ * Each concrete Scene, inheriting from this class, should then be put into SceneManager.
  */
 class Scene {
 public:
