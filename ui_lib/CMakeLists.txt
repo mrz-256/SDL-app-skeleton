@@ -6,11 +6,11 @@ set(HEADER_FILES
         headers/scene_logic/SceneManager.h
         headers/scene_logic/Scene.h
         headers/ui/InputData.h
+        headers/gui/gui.h
         headers/gui/Node.h
         headers/gui/Rectangle.h
         headers/scenes/ExampleScene.h
         headers/scenes/ExampleSceneTwo.h
-        headers/gui/gui.h
 )
 
 set(SOURCE_FILES

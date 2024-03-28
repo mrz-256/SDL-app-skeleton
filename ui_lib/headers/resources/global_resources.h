@@ -2,7 +2,7 @@
 
 #include <SDL_ttf.h>
 #include <SDL_image.h>
-#include "../gui/gui.h"
+
 
 /// if there are more resources, it may be better to use singleton and have the
 /// loading there rather than in UI::onLoadMedia()
@@ -16,5 +16,5 @@ namespace Fonts
 namespace Textures
 {
     // cat image
-    extern gui::Rectangle* cat;
+    
 }

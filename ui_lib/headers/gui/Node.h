@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../resources/global_resources.h"
-#include "headers/ui/InputData.h"
+#include "../ui/InputData.h"
 
 namespace gui
 {

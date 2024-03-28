@@ -4,7 +4,6 @@ void UI::onCleanup()
 {
     // close all loaded media
     TTF_CloseFont(Fonts::font);
-    delete Textures::cat;
 
     // destroy SDL objects
     SDL_DestroyRenderer(renderer);

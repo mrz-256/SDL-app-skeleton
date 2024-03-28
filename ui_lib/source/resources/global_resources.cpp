@@ -7,5 +7,4 @@ namespace Fonts
 
 namespace Textures
 {
-    gui::Rectangle* cat = nullptr;
 }
