@@ -15,6 +15,8 @@ namespace gui
     public:
         Rectangle();
 
+        explicit Rectangle(SDL_Texture *texture);
+
         ~Rectangle() override;
 
         /**

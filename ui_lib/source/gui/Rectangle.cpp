@@ -6,6 +6,15 @@ gui::Rectangle::Rectangle()
     width = height = 0;
 }
 
+gui::Rectangle::Rectangle(SDL_Texture *texture) : texture(texture)
+{
+    width = height = 0;
+    if (texture != nullptr)
+    {
+        SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
+    }
+}
+
 gui::Rectangle::~Rectangle()
 {
     if (texture != nullptr)
