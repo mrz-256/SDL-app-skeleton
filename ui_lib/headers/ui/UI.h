@@ -14,8 +14,8 @@ using std::string;
 
 class UI {
 private:
-    SDL_Window *window;
-    SDL_Renderer *renderer;
+    SDL_Window *window{};
+    SDL_Renderer *renderer{};
 
     bool running;
 

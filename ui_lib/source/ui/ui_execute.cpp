@@ -8,8 +8,9 @@ UI::UI() : window(nullptr), renderer(nullptr), running(true)
 int UI::onExecute()
 {
     // initialization part
-    if (not onInit()) return -1;
-    if (not onLoadMedia()) return -2;
+    if (not onInit()) return 10;
+    if (not onLoadMedia()) return 20;
+
 
     // input data
     Uint64 last = SDL_GetTicks64();

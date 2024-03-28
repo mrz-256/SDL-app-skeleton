@@ -19,15 +19,14 @@ bool UI::onInit()
     if (window != nullptr)
     {
         // create renderer
-        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
         if (renderer != nullptr)
         {
-            // create tiles
             return true;
         }
         else
         {
-            SDL_free(window);
+            SDL_DestroyWindow(window);
             return false;
         }
     } else
