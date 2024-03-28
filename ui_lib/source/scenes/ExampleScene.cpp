@@ -4,8 +4,10 @@
 ExampleScene::~ExampleScene() = default;
 
 ExampleScene::ExampleScene(SDL_Window *window, SDL_Renderer *renderer)
-        : Scene(window, renderer)
+        : Scene(window, renderer), cat()
 {
+    cat.loadFrom(renderer, "../assets/cat.jpg");
+    cat.scale(0.1, 0.1);
 }
 
 void ExampleScene::update(InputData *input_data, Uint64 elapsed_time)
@@ -21,6 +23,7 @@ void ExampleScene::render(SDL_Window *window, SDL_Renderer *renderer)
     SDL_SetRenderDrawColor(renderer, 0xff, 0xaa, 0xaa, 0xaa);
     SDL_RenderClear(renderer);
 
+    cat.render(window, renderer, 100, 100);
 
     SDL_SetWindowTitle(window, "Example scene");
 }

@@ -4,6 +4,7 @@ gui::Rectangle::Rectangle()
 {
     texture = nullptr;
     width = height = 0;
+    vertical_scale = horizontal_scale = 1;
 }
 
 gui::Rectangle::Rectangle(SDL_Texture *texture) : texture(texture)
@@ -13,6 +14,7 @@ gui::Rectangle::Rectangle(SDL_Texture *texture) : texture(texture)
     {
         SDL_QueryTexture(texture, nullptr, nullptr, &width, &height);
     }
+    vertical_scale = horizontal_scale = 1;
 }
 
 gui::Rectangle::~Rectangle()
@@ -41,7 +43,9 @@ void gui::Rectangle::render(SDL_Window *window, SDL_Renderer *renderer, int x, i
 {
     if (texture == nullptr) return;
 
-    SDL_Rect destination = {x, y, width, height};
+    SDL_Rect destination = {x, y};
+    destination.w = (int)((double) width * horizontal_scale);
+    destination.h = (int)((double) height * vertical_scale);
 
     SDL_RenderCopy(renderer, texture, nullptr, &destination);
 }
@@ -83,5 +87,11 @@ bool gui::Rectangle::loadFrom(SDL_Renderer *renderer, const char *file, SDL_Colo
     SDL_FreeSurface(temp);
 
     return texture != nullptr;
+}
+
+void gui::Rectangle::scale(double horizontal, double vertical)
+{
+    horizontal_scale = horizontal;
+    vertical_scale = vertical;
 }
 

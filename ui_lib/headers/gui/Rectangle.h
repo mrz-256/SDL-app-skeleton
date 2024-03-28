@@ -12,6 +12,8 @@ namespace gui
         SDL_Texture *texture;
         int width, height;
 
+        double vertical_scale, horizontal_scale;
+
     public:
         Rectangle();
 
@@ -59,6 +61,13 @@ namespace gui
                 const char *file,
                 SDL_Color color_key = {0,0,0,0}
         );
+
+        /**
+         * Scales the size of the rendered image
+         * @param horizontal horizontal scale
+         * @param vertical vertical scale
+         */
+        void scale(double horizontal = 1, double vertical = 1);
 
     private:
         [[nodiscard]] int getWidth() const override;
