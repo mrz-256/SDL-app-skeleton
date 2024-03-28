@@ -10,6 +10,7 @@ set(HEADER_FILES
         headers/gui/Rectangle.h
         headers/scenes/ExampleScene.h
         headers/scenes/ExampleSceneTwo.h
+        headers/gui/gui.h
 )
 
 set(SOURCE_FILES

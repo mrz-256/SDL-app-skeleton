@@ -34,7 +34,7 @@ public:
      * Loads all media used in UI.
      * @return true on success
      */
-    static bool onLoadMedia();
+    bool onLoadMedia();
 
     int onExecute();
 

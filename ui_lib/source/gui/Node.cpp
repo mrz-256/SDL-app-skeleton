@@ -2,6 +2,8 @@
 
 namespace gui
 {
+    Node::~Node() = default;
+
     void Node::close()
     {}
 } // gui

@@ -4,3 +4,8 @@ namespace Fonts
 {
     TTF_Font *font = nullptr;
 }
+
+namespace Textures
+{
+    gui::Rectangle* cat = nullptr;
+}

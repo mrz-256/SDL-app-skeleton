@@ -2,6 +2,7 @@
 
 #include "../resources/global_resources.h"
 #include "../ui/InputData.h"
+#include "../gui/gui.h"
 
 class SceneManager;
 

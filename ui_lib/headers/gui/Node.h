@@ -7,7 +7,8 @@ namespace gui
 {
 
     class Node {
-        virtual ~Node() = default;
+    public:
+        virtual ~Node();
 
         virtual void close();
 
@@ -23,9 +24,9 @@ namespace gui
                 int x, int y
         ) = 0;
 
-        virtual int width() = 0;
+        [[nodiscard]] virtual int getWidth() const = 0;
 
-        virtual int height() = 0;
+        [[nodiscard]] virtual int getHeight() const = 0;
 
     };
 

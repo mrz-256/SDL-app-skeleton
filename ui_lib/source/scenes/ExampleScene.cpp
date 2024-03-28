@@ -5,7 +5,8 @@ ExampleScene::~ExampleScene() = default;
 
 ExampleScene::ExampleScene(SDL_Window *window, SDL_Renderer *renderer)
         : Scene(window, renderer)
-{}
+{
+}
 
 void ExampleScene::update(InputData *input_data, Uint64 elapsed_time)
 {
@@ -19,6 +20,7 @@ void ExampleScene::render(SDL_Window *window, SDL_Renderer *renderer)
 {
     SDL_SetRenderDrawColor(renderer, 0xff, 0xaa, 0xaa, 0xaa);
     SDL_RenderClear(renderer);
+
 
     SDL_SetWindowTitle(window, "Example scene");
 }

@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "../scene_logic/Scene.h"
 
 class ExampleSceneTwo : public Scene {
